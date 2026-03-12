@@ -17,9 +17,7 @@
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
-        {% if site.logo %}
-          <img src="pixelcharacter.PNG" alt="Pixel Me!" />
-        {% endif %}
+        <img src="pixelcharacter.PNG" alt="Pixel Me!" />
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
         
@@ -29,7 +27,11 @@
       <section>
 
       {{ content }}
-
+        <footer>
+          Email Info:
+          adang2@andrew.cmu.edu
+          alyssadang0129@gmail.com
+        </footer>
       </section>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
