@@ -13,7 +13,7 @@ Tag along to see my journey!
 
 ### Project List
 
-[Honey Haven Design Portfolio](https://alyssahui.github.io/game-portfolio/) | <p style > Ongoing Project </p>
+[Honey Haven Design Portfolio](https://alyssahui.github.io/game-portfolio/) | <p > Ongoing Project </p>
 
 - A short walkthrough of our game development process
 - UI/UX and storywriting project lead for visual novel game
