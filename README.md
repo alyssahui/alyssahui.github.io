@@ -18,12 +18,12 @@ Tag along to see my journey!
 - A short walkthrough of our game development process
 - UI/UX and storywriting project lead for visual novel game
 
-[2529 March Feature](https://alyssahui.github.io/wedding-portfolio/) ![](link-2.svg) | Ongoing Gallery
+[2529 March Feature](https://alyssahui.github.io/wedding-portfolio/) ![](link-2.svg) | &nbsp;&nbsp;Ongoing Gallery
 
 - This month's wedding photo gallery
 - Co-founder of small wedding photography/videography studio (2529 Films)
 
-[Sir Jester](https://avnithv.github.io) ![](link-2.svg) | TartanHacks 2026
+[Sir Jester](https://avnithv.github.io) ![](link-2.svg) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TartanHacks 2026
 
 - Retro mobile game under 15kb
 - Led UI/UX design
