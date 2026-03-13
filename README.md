@@ -11,7 +11,7 @@ Tag along to see my journey!
 
 <br>
 
-### Project List
+### Projects
 
 [Honey Haven Design Portfolio](https://alyssahui.github.io/game-portfolio/) | Ongoing Project
 
@@ -39,6 +39,6 @@ Tag along to see my journey!
 
 - 15-112: Fundamentals of Programming
 
-- 85-110: Cognitive Psychology
-
 - 85-270: Computational Neuroscience
+
+- 85-110: Cognitive Psychology
