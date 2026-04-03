@@ -1,6 +1,6 @@
 ### A Little Bit About Me
 
-Hey there! I'm Alyssa, a freshman studying Cognitive Science at Carnegie Mellon University. 
+Hey there! I'm Alyssa, a freshman studying Human-Computer Interaction and Cognitive Science at Carnegie Mellon University. 
 
 I do a bit of post-production and design for fun :] 
 
