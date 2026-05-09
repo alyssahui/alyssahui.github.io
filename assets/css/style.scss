@@ -12,13 +12,40 @@ a {
   color: #427AB5;
 }
 
-/* Kills the default white line above the footer */
-footer {
-  border-top: none !important;
-  border: none !important;
+/* OVERRIDE THE THEME HEADER LAYOUT TO FIX OVERLAPPING */
+header {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto !important; /* Prevents the theme from locking the height */
+  position: static !important; /* Fixes overlap on smaller screens */
+  min-height: 100vh;
 }
 
-/* Button styles */
+/* Styles for your centered profile picture */
+.profile-pic-container {
+  text-align: center;
+  margin: 20px auto 30px auto;
+  width: 100%;
+}
+
+.profile-pic-container img {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+/* Styles for your custom footer area inside the sidebar */
+.sidebar-footer {
+  margin-top: auto; /* This pushes the footer below the image */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-top: none !important; /* Removes the white line completely */
+}
+
+/* Button styles (un-bolded text) */
 .resume-button, .linkedin-button {
   display: inline-block;
   padding: 12px 24px;
@@ -27,10 +54,7 @@ footer {
   text-decoration: none;
   border-radius: 8px;
   font-family: inherit;
-  
-  /* Un-bolds the text */
-  font-weight: normal !important; 
-  
+  font-weight: normal !important; /* Forces text to NOT be bold */
   margin: 10px 5px;
   transition: background-color 0.3s ease;
 }
@@ -39,4 +63,10 @@ footer {
   background-color: #356291 !important; 
   text-decoration: none;
   color: white !important;
+}
+
+/* Keep the main content area separated */
+section {
+  float: right;
+  width: 500px;
 }
