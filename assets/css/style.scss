@@ -23,26 +23,26 @@ header {
 }
 
 /* Styles for your centered profile picture */
+/* FIX 1: Strict Centering */
 .profile-pic-container {
-  text-align: center;
-  margin: 20px auto 30px auto;
   width: 100%;
+  margin: 10px auto; /* Reduced margin to pull footer up */
 }
 
 .profile-pic-container img {
+  display: block;
+  margin: 0 auto; /* This forces it to center perfectly */
   max-width: 100%;
   width: 250px;
   border-radius: 15px;
-  display: inline-block;
 }
 
-/* Styles for your custom footer area inside the sidebar */
+/* FIX 2: Reduced Spacing */
 .sidebar-footer {
-  margin-top: auto; /* This pushes the footer below the image */
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin-top: 15px; /* Tighter gap between photo and email info */
+  padding-top: 0;   /* Removed the extra padding that was pushing it down */
   text-align: center;
-  border-top: none !important; /* Removes the white line completely */
+  border-top: none !important; 
 }
 
 /* Button styles (un-bolded text) */
