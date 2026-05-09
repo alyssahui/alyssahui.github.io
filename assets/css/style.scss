@@ -26,25 +26,24 @@ a {
   border-radius: 15px;
 }
 
-/* FIX 2: Tighter Footer Spacing (No white line) */
 .sidebar-footer {
   margin-top: 15px; 
   padding-top: 0;   
-  text-align: center;
+  text-align: left; /* CHANGED: Forces email and buttons to the left */
   border-top: none !important; 
 }
 
-/* Button styles (un-bolded text) */
 .resume-button, .linkedin-button {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 8px 16px; /* CHANGED: Reduced padding for a smaller button footprint */
+  font-size: 0.9em;  /* CHANGED: Slightly smaller text to match the smaller button */
   background-color: #427AB5 !important;
   color: white !important;
   text-decoration: none;
   border-radius: 8px;
   font-family: inherit;
   font-weight: normal !important; 
-  margin: 10px 5px;
+  margin: 10px 10px 10px 0; /* CHANGED: Pushes buttons apart but keeps them flush-left */
   transition: background-color 0.3s ease;
 }
 
