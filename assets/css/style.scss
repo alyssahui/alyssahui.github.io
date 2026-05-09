@@ -12,35 +12,24 @@ a {
   color: #427AB5;
 }
 
-/* OVERRIDE THE THEME HEADER LAYOUT TO FIX OVERLAPPING */
-header {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: auto !important; /* Prevents the theme from locking the height */
-  position: static !important; /* Fixes overlap on smaller screens */
-  min-height: 100vh;
-}
-
-/* Styles for your centered profile picture */
-/* FIX 1: Strict Centering */
+/* FIX 1: Strict Centering for the Photo */
 .profile-pic-container {
   width: 100%;
-  margin: 10px auto; /* Reduced margin to pull footer up */
+  margin: 10px auto; 
 }
 
 .profile-pic-container img {
   display: block;
-  margin: 0 auto; /* This forces it to center perfectly */
+  margin: 0 auto; 
   max-width: 100%;
   width: 250px;
   border-radius: 15px;
 }
 
-/* FIX 2: Reduced Spacing */
+/* FIX 2: Tighter Footer Spacing (No white line) */
 .sidebar-footer {
-  margin-top: 15px; /* Tighter gap between photo and email info */
-  padding-top: 0;   /* Removed the extra padding that was pushing it down */
+  margin-top: 15px; 
+  padding-top: 0;   
   text-align: center;
   border-top: none !important; 
 }
@@ -54,7 +43,7 @@ header {
   text-decoration: none;
   border-radius: 8px;
   font-family: inherit;
-  font-weight: normal !important; /* Forces text to NOT be bold */
+  font-weight: normal !important; 
   margin: 10px 5px;
   transition: background-color 0.3s ease;
 }
@@ -63,10 +52,4 @@ header {
   background-color: #356291 !important; 
   text-decoration: none;
   color: white !important;
-}
-
-/* Keep the main content area separated */
-section {
-  float: right;
-  width: 500px;
 }
