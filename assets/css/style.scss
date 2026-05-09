@@ -10,5 +10,28 @@ body {
 }
 
 a {
-  color: #4A70A9;
+  color: #427AB5;
 }
+
+<style>
+  /* Base styles for both buttons */
+  .resume-button, .linkedin-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #427AB5; /* Your specific color */
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 10px 5px; /* Adds space above/below and between them */
+    transition: background-color 0.3s ease;
+  }
+
+  /* Slight darkening effect when you hover over them */
+  .resume-button:hover, .linkedin-button:hover {
+    background-color: #356291; 
+    text-decoration: none;
+    color: white !important;
+  }
+</style>
