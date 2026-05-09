@@ -1,6 +1,5 @@
 ---
 ---
-
 @import "jekyll-theme-minimal";
 
 body {
@@ -12,10 +11,14 @@ body {
 a {
   color: #427AB5;
 }
+
+/* Kills the default white line above the footer */
 footer {
   border-top: none !important;
+  border: none !important;
 }
 
+/* Button styles */
 .resume-button, .linkedin-button {
   display: inline-block;
   padding: 12px 24px;
@@ -25,8 +28,8 @@ footer {
   border-radius: 8px;
   font-family: inherit;
   
-  /* THIS UN-BOLDS THE TEXT */
-  font-weight: 400 !important; 
+  /* Un-bolds the text */
+  font-weight: normal !important; 
   
   margin: 10px 5px;
   transition: background-color 0.3s ease;
