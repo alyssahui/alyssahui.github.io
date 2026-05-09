@@ -16,12 +16,16 @@
     <div class="wrapper">
       <header>
   <div class="sidebar-content">
-    <h1 style="display: block; overflow: hidden; margin-bottom: 15px;">
-      <img src="pixelcharacter.PNG" alt="Pixel Me!" style="float: left; margin-right: 10px;" height="100"/>
-      <a href="{{ "/" | absolute_url }}" style="display: block; padding-top: 10px;">{{ site.title | default: site.github.repository_name }}</a>
-    </h1>
     
-    <p>{{ site.description | default: site.github.project_tagline }}</p>
+    <div style="overflow: hidden; margin-bottom: 20px;">
+      <img src="pixelcharacter.PNG" alt="Pixel Me!" style="float: left; margin-right: 15px;" height="100"/>
+      <div style="padding-top: 10px;">
+        <h1 style="margin: 0; padding: 0; line-height: 1.2;">
+          <a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+        </h1>
+        <p style="margin: 5px 0 0 0;">{{ site.description | default: site.github.project_tagline }}</p>
+      </div>
+    </div>
 
     <div class="profile-pic-container">
       <img src="pfp.jpg" alt="Profile Picture">
@@ -29,7 +33,7 @@
   </div>
 
   <div class="sidebar-footer">
-    <div style="display: flex; align-items: center; margin-bottom: 10px; justify-content: center;">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
       Email Info: &nbsp;      
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-8.61 10.79c.18.14.4.21.61.21s.43-.07.61-.21l1.55-1.21L18.58 18H5.41l4.42-4.42 1.55 1.21ZM20 6v.51l-8 6.22-8-6.22V6zm0 3.04v7.54l-4.24-4.24zm-11.76 3.3L4 16.58V9.04zM20 18"></path>
@@ -39,7 +43,7 @@
     <a href="mailto:adang2@andrew.cmu.edu">adang2@andrew.cmu.edu</a><br> 
     <a href="mailto:alyssadang0129@gmail.com">alyssadang0129@gmail.com</a>
     
-    <div style="margin-top: 25px;">
+    <div style="margin-top: 20px;">
       <a href="resume.pdf" download class="resume-button">Resume</a>
       <a href="https://www.linkedin.com/in/alyssakdang" target="_blank" class="linkedin-button">LinkedIn</a>
     </div>
@@ -49,7 +53,7 @@
 <section>
   {{ content }}
 </section>
-    </div>
+    </div>     
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
 </html>
