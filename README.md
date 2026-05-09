@@ -44,8 +44,8 @@ Tag along to see my journey!
 
 ### Relevant Coursework
 
-- 15-112: Fundamentals of Programming
-
 - 85-270: Computational Neuroscience
+
+- 15-112: Fundamentals of Programming
 
 - 85-110: Cognitive Psychology
