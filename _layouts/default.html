@@ -15,40 +15,40 @@
   <body>
     <div class="wrapper">
       <header>
-  <h1 style="display: block; overflow: auto;">
-    <img src="pixelcharacter.PNG" alt="Pixel Me!" style="float: left; margin-right: 15px;" height="100"/>
-    <a href="{{ "/" | absolute_url }}" style="display: inline-block; padding-top: 10px;">
-      {{ site.title | default: site.github.repository_name }}
-    </a>
-  </h1>
-  
-  <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <h1>
+            <img src="pixelcharacter.PNG" alt="Pixel Me!" style="float: left; margin-right: 10px;" height="100"/>
+            <a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+          </h1>
+          
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-  <div style="display: table; width: 250px; margin-bottom: 20px; clear: both;">
-    <img src="pfp.jpg" style="width: 250px; height: auto; border-radius: 15px; display: block;">
-  </div>
-</header>
+          <div style="text-align: center; margin-bottom: 30px;">
+            <img src="pfp.jpg" style="max-width: 100%; width: 250px; border-radius: 15px; display: inline-block;">
+          </div>
+      </header>
 
-<section>
-  {{ content }}
-</section>
+      <section>
+      {{ content }}
+      </section>
 
-<footer style="clear: both; display: block; padding-top: 20px; margin-top: 20px;">
-  <div style="display: flex; align-items: center; margin-bottom: 10px;">
-    Email Info: &nbsp;      
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-8.61 10.79c.18.14.4.21.61.21s.43-.07.61-.21l1.55-1.21L18.58 18H5.41l4.42-4.42 1.55 1.21ZM20 6v.51l-8 6.22-8-6.22V6zm0 3.04v7.54l-4.24-4.24zm-11.76 3.3L4 16.58V9.04zM20 18"></path>
-    </svg>
-  </div>
-  
-  <a href="mailto:adang2@andrew.cmu.edu">adang2@andrew.cmu.edu</a><br> 
-  <a href="mailto:alyssadang0129@gmail.com">alyssadang0129@gmail.com</a>
-  
-  <div style="margin-top: 25px;">
-    <a href="resume.pdf" download class="resume-button">Resume</a>
-    <a href="https://www.linkedin.com/in/alyssakdang" target="_blank" class="linkedin-button">LinkedIn</a>
-  </div>
-</footer>
+      <div style="clear: both; width: 100%;"></div>
+
+      <footer style="display: block; padding-top: 30px; margin-top: 20px;">
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          Email Info: &nbsp;      
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-8.61 10.79c.18.14.4.21.61.21s.43-.07.61-.21l1.55-1.21L18.58 18H5.41l4.42-4.42 1.55 1.21ZM20 6v.51l-8 6.22-8-6.22V6zm0 3.04v7.54l-4.24-4.24zm-11.76 3.3L4 16.58V9.04zM20 18"></path>
+          </svg>
+        </div>
+        
+        <a href="mailto:adang2@andrew.cmu.edu">adang2@andrew.cmu.edu</a><br> 
+        <a href="mailto:alyssadang0129@gmail.com">alyssadang0129@gmail.com</a>
+        
+        <div style="margin-top: 25px;">
+          <a href="resume.pdf" download class="resume-button">Resume</a>
+          <a href="https://www.linkedin.com/in/alyssakdang" target="_blank" class="linkedin-button">LinkedIn</a>
+        </div>
+      </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
