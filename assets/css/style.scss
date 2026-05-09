@@ -35,15 +35,14 @@ a {
 
 .resume-button, .linkedin-button {
   display: inline-block;
-  padding: 8px 16px; /* CHANGED: Reduced padding for a smaller button footprint */
-  font-size: 0.9em;  /* CHANGED: Slightly smaller text to match the smaller button */
+  padding: 12px 24px;
   background-color: #427AB5 !important;
   color: white !important;
   text-decoration: none;
   border-radius: 8px;
   font-family: inherit;
   font-weight: normal !important; 
-  margin: 10px 10px 10px 0; /* CHANGED: Pushes buttons apart but keeps them flush-left */
+  margin: 10px 5px;
   transition: background-color 0.3s ease;
 }
 
