@@ -16,21 +16,21 @@ a {
 .resume-button, .linkedin-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #427AB5;
+  background-color: #427AB5 !important;
   color: white !important;
   text-decoration: none;
   border-radius: 8px;
   font-family: inherit;
   
-  /* Change 'bold' to 'normal' or '500' */
-  font-weight: 400; 
+  /* THIS UN-BOLDS THE TEXT */
+  font-weight: 400 !important; 
   
   margin: 10px 5px;
   transition: background-color 0.3s ease;
 }
 
 .resume-button:hover, .linkedin-button:hover {
-  background-color: #356291; 
+  background-color: #356291 !important; 
   text-decoration: none;
   color: white !important;
 }
