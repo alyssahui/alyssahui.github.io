@@ -17,9 +17,9 @@ Tag along to see my journey!
 
 - Colead for visual novel game that is now playable on Itch!
 - Led UI/UX design, story writing, and overall game direction
+- Short walkthrough of our game development process: [HH Design Portfolio (March)](https://alyssahui.github.io/game-portfolio/)
 - Won Game Creation Society Gold for 2026 
 - Pitched and developed over 1 semester (January - April 2026)
-- A short walkthrough of our game development process: [Honey Haven Design Portfolio (March 2026)](https://alyssahui.github.io/game-portfolio/)
 
 [2529 March Feature](https://alyssahui.github.io/wedding-portfolio/) ![](link-2.svg) | Ongoing Gallery
 
