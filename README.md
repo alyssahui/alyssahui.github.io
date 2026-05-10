@@ -17,13 +17,13 @@ Tag along to see my journey!
 
 - Colead for visual novel game that is now playable on Itch!
 - Led UI/UX design, story writing, and overall game direction
-- Short walkthrough of our game development process: [HH Design Portfolio (March)](https://alyssahui.github.io/game-portfolio/)
+- Short walkthrough of development process: [Design Portfolio - March](https://alyssahui.github.io/game-portfolio/)
 - Won Game Creation Society Gold for 2026 
 - Pitched and developed over 1 semester (January - April 2026)
 
 [2529 March Feature](https://alyssahui.github.io/wedding-portfolio/) ![](link-2.svg) | Ongoing Gallery
 
-- This month's wedding photo gallery
+- March 2026 wedding photo gallery
 - Co-founder of small wedding photography/videography studio (2529 Films)
 
 [Sir Jester](https://avnithv.github.io) ![](link-2.svg) | TartanHacks 2026
