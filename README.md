@@ -4,7 +4,7 @@ Hey there! I'm Alyssa, a freshman studying cognitive science and human-computer 
 
 I do a bit of post-production and design for fun :] 
 
-I like working on HCI-related projects and hope to one day work on brain-computer interfaces, combining my passion for neuroscience with human-centered design.
+I like working on HCI-related projects and hope to further explore brain-computer interfaces, combining my passion for neuroscience with human-centered design.
 
 Tag along to see my journey!
 
