@@ -1,10 +1,10 @@
 ### A Little Bit About Me
 
-Hey there! I'm Alyssa, a freshman studying Human-Computer Interaction and Cognitive Science at Carnegie Mellon University. 
+Hey there! I'm Alyssa, a freshman studying cognitive science and human-computer interaction at Carnegie Mellon University. 
 
 I do a bit of post-production and design for fun :] 
 
-I like working on HCI-related projects and hope to one day work on Brain-Computer Interfaces, combining my passion for neuroscience with human-centered design.
+I like working on HCI-related projects and hope to one day work on brain-computer interfaces, combining my passion for neuroscience with human-centered design.
 
 Tag along to see my journey!
 
@@ -13,7 +13,7 @@ Tag along to see my journey!
 
 ### Projects
 
-[Honey Haven: where life is sweet](https://honeyhaven.itch.io/honey-haven) ![](link-2.svg) | Game Creation Society 2026
+[HONEY HAVEN: where life is sweet](https://honeyhaven.itch.io/honey-haven) ![](link-2.svg) | Game Creation Society 2026
 
 - Colead for visual novel game that is now playable on Itch!
 - Led UI/UX design, story writing, and overall game direction
