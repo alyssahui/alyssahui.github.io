@@ -21,6 +21,10 @@ body {
     line-height: 1.5;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* --- Navigation --- */
 .top-nav {
     position: relative; /* Allows us to absolutely position the left item */
@@ -325,6 +329,11 @@ img.img-placeholder.large {
     margin-bottom: 25px;
 }
 
+.about-student > p {
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
 .about-student ul {
     list-style-type: none;
     padding-left: 0; 
@@ -558,6 +567,17 @@ img.modal-img-placeholder {
     color: var(--text-light);
 }
 
+.modal-inline-link {
+    color: var(--pink-text);
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.modal-inline-link:hover {
+    color: var(--text-light);
+}
+
 .modal-details p {
     margin-bottom: 8px;
 }
@@ -701,6 +721,47 @@ img.img-placeholder.small:hover {
         outline: none;
         outline-offset: 0;
         opacity: 1;
+    }
+
+    .arrow-btn {
+        display: none;
+    }
+}
+
+/* --- Landscape Mobile Layout --- */
+@media (max-width: 900px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+    .carousel-container {
+        gap: 0;
+        align-items: stretch;
+    }
+
+    .carousel-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        min-width: 0;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        touch-action: pan-x;
+        overscroll-behavior-x: contain;
+    }
+
+    .carousel-viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-track {
+        width: max-content;
+        min-width: max-content;
+        transform: none !important;
+        transition: none !important;
+        padding: 10px 0;
+    }
+
+    .project-card {
+        flex: 0 0 calc(33.333% - 13.33px);
+        scroll-snap-align: start;
     }
 
     .arrow-btn {

@@ -3,10 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('projectTrack');
     const scrollLeftBtn = document.getElementById('scrollLeft');
     const scrollRightBtn = document.getElementById('scrollRight');
-    const isPortraitMobile = window.matchMedia('(max-width: 700px) and (orientation: portrait)').matches;
     const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-    if (track && scrollLeftBtn && scrollRightBtn && !isPortraitMobile) {
+    if (track && scrollLeftBtn && scrollRightBtn && !isMobile) {
 
         let isAnimating = false;
         const realCards = Array.from(track.children);
@@ -137,6 +136,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalNote1 = document.getElementById('modalNote1');
     const modalNote2 = document.getElementById('modalNote2');
 
+    const setNoteContent = (element, text, linkHref, linkText) => {
+        if (!element) {
+            return;
+        }
+
+        element.textContent = '';
+
+        if (text) {
+            element.appendChild(document.createTextNode(text));
+        }
+
+        if (linkHref) {
+            if (text) {
+                element.appendChild(document.createTextNode(' '));
+            }
+
+            const link = document.createElement('a');
+            link.href = linkHref;
+            link.textContent = linkText || linkHref;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.className = 'modal-inline-link';
+            element.appendChild(link);
+        }
+    };
+
     if (modal) {
         const projectTrack = document.getElementById('projectTrack');
 
@@ -178,11 +203,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (modalNote1) {
-                    modalNote1.textContent = getField('data-modal-note-1');
+                    setNoteContent(
+                        modalNote1,
+                        getField('data-modal-note-1'),
+                        getField('data-modal-note-1-link-href'),
+                        getField('data-modal-note-1-link-text')
+                    );
                 }
 
                 if (modalNote2) {
-                    modalNote2.textContent = getField('data-modal-note-2');
+                    setNoteContent(
+                        modalNote2,
+                        getField('data-modal-note-2'),
+                        getField('data-modal-note-2-link-href'),
+                        getField('data-modal-note-2-link-text')
+                    );
                 }
             }
 
