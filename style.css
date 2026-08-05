@@ -160,6 +160,26 @@ html {
         touch-action: pan-x;
         overscroll-behavior-x: contain;
     }
+    
+    /* show and enlarge arrow buttons for touch in landscape */
+    .carousel-container { position: relative; }
+    .arrow-btn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.9);
+        border-radius: 8px;
+        padding: 10px 12px;
+        min-width: 44px;
+        min-height: 44px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        z-index: 10;
+        color: var(--text-main);
+    }
+    
+    .arrow-btn.left-arrow { left: 6px; }
+    .arrow-btn.right-arrow { right: 6px; }
 
     .carousel-viewport::-webkit-scrollbar {
         display: none;

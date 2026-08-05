@@ -103,6 +103,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile: simple scroll handlers for touch devices ---
+    const viewport = document.querySelector('.carousel-viewport');
+
+    if (isMobile && viewport && scrollLeftBtn && scrollRightBtn) {
+        const getMobileStep = () => {
+            const card = track ? track.querySelector('.project-card') : null;
+            if (card) {
+                const gap = parseFloat(window.getComputedStyle(track).gap || '0');
+                return card.offsetWidth + gap;
+            }
+            return Math.round(viewport.offsetWidth * 0.7);
+        };
+
+        scrollLeftBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const step = getMobileStep();
+            viewport.scrollBy({ left: -step, behavior: 'smooth' });
+        });
+
+        scrollRightBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const step = getMobileStep();
+            viewport.scrollBy({ left: step, behavior: 'smooth' });
+        });
+    }
+
     // --- Image Swapping Logic ---
     const smallImages = document.querySelectorAll('.img-placeholder.small');
     const largeImage = document.querySelector('.img-placeholder.large');
