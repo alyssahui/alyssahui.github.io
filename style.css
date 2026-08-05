@@ -1,0 +1,709 @@
+:root {
+    --text-main: #7c7c7c; /* Updated text color */
+    --text-light: #7c7c7c; /* Updated text color */
+    --pink-accent: #ffcaef; /* Updated pink */
+    --pink-text: #ffcaef; /* Updated pink */
+    --gray-bg: #d9d9d9;
+    --modal-bg-color: #f7f7f7;
+    --border-color: #cccccc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-main);
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+/* --- Navigation --- */
+.top-nav {
+    position: relative; /* Allows us to absolutely position the left item */
+    display: flex;
+    justify-content: center; /* Mathematically guarantees the center links are dead-center */
+    align-items: center; 
+    height: 50px; 
+    padding: 0 40px; 
+    font-size: 0.75rem; 
+}
+
+.nav-left {
+    position: absolute;
+    left: 40px; /* Pins the contact button to the left edge, matching the padding */
+}
+
+/* New styling specifically for the mailto link */
+.contact-link {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--pink-text); /* Gives it a nice hover effect */
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.nav-center .slash {
+    color: var(--text-main);
+}
+
+.nav-center .active {
+    color: var(--pink-text);
+}
+
+.nav-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+/* --- Responsive Nav --- */
+/* If the screen gets smaller than 700px, this runs automatically */
+@media (max-width: 700px) and (orientation: portrait) {
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 12px; /* Space between "contact me" and the nav links */
+    }
+    
+    .nav-left {
+        position: static; /* Removes the absolute positioning */
+        display: flex;
+        justify-content: center; /* Centers the contact button on the top line */
+    }
+
+    .nav-center {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .contact-link:hover {
+        color: var(--text-main);
+    }
+
+    .profile-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        margin-bottom: 42px;
+    }
+
+    .profile-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: min(100%, 420px);
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+
+    .small-images {
+        display: contents;
+    }
+
+    img.img-placeholder.small,
+    img.img-placeholder.large {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .profile-info {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: none;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        flex: 1 1 100%;
+    }
+
+    .carousel-container {
+        gap: 0;
+    }
+
+    .carousel-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        width: 100%;
+        touch-action: pan-x;
+        overscroll-behavior-x: contain;
+    }
+
+    .carousel-viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-track {
+        width: max-content;
+        min-width: max-content;
+        transform: none !important;
+        transition: none !important;
+        padding: 10px 0;
+    }
+
+    .project-card {
+        flex: 0 0 78vw;
+        scroll-snap-align: start;
+    }
+
+    .arrow-btn {
+        display: none;
+    }
+}
+
+/* Main Layout */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Profile Header Alignment --- */
+.profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    margin-bottom: 40px;
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    line-height: 0.9; 
+}
+
+/* --- Profile Header Text Colors --- */
+.first-name {
+    font-size: 1.8rem; 
+    font-weight: 300;
+    color: var(--text-main); /* Now uses the #7c7c7c variable */
+}
+
+.last-name {
+    font-size: 2.1rem; 
+    font-weight: 500; 
+    color: var(--text-main); /* Now uses the #7c7c7c variable */
+    margin-left: 45px; 
+}
+
+.pink-exclamation {
+    color: var(--pink-accent);
+    font-size: 3.8rem; /* Scaled down from 4.8rem to match the names */
+    font-weight: bold;
+    line-height: 0.75;
+    margin-left: 0px; /* Reduced from 10px to pull it tighter to "DANG" */
+    transform: rotate(8deg); 
+    transform-origin: bottom center;
+}
+
+/* --- Profile Content Alignment --- */
+.profile-content {
+    display: flex;
+    justify-content: center; /* Centers the entire grouping horizontally */
+    align-items: center; /* Centers the image block and text block vertically */
+    gap: 50px; /* Slightly increased gap to let the larger images breathe */
+    margin-bottom: 60px;
+}
+
+/* --- Scaled Image Grid Proportions --- */
+.profile-images {
+    display: flex;
+    gap: 15px; 
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Kept at 10px */
+}
+
+/* --- Real Image Grid Proportions --- */
+.profile-images {
+    display: flex;
+    gap: 15px; 
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+/* This targets the actual <img> tags now */
+img.img-placeholder {
+    object-fit: cover; /* This is the magic rule! It perfectly crops the photo to fit the square without squishing it */
+    object-position: center; /* Ensures the middle of your photo is what stays in the frame */
+    background-color: var(--gray-bg); /* Keeps a gray background while the photo loads */
+}
+
+img.img-placeholder.small {
+    width: 115px;
+    height: 115px; 
+}
+
+img.img-placeholder.large {
+    width: 365px;
+    height: 365px; 
+}
+
+/* --- Ensure Info Section Stays Confined --- */
+.profile-info {
+    flex: 0 1 400px; /* Prevents the text block from stretching too wide, keeping it neat next to the larger images */
+}
+
+.badge {
+    background-color: var(--pink-accent);
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.profile-info h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+}
+
+.location-icon {
+    width: 0.95em;
+    height: 0.95em;
+    flex: 0 0 auto;
+    fill: currentColor;
+    display: inline-block;
+}
+
+.stock-text {
+    color: var(--pink-text);
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+/* --- Fixed Bullet Point Indentation --- */
+.about-student {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.about-student ul {
+    list-style-type: none;
+    padding-left: 0; 
+}
+
+.about-student li {
+    position: relative; /* Allows us to absolutely position the bullet inside */
+    padding-left: 12px; /* Pushes all text (including the 2nd line) to the right */
+    margin-bottom: 4px;
+}
+
+.about-student li::before {
+    content: "·"; /* Using the smaller middle dot to match your screenshot */
+    position: absolute;
+    left: 0; /* Locks the bullet to the far left edge of the padded space */
+    top: 0;
+    font-weight: bold; 
+}
+
+/* --- Updated Button Styles for Links --- */
+.action-buttons {
+    display: flex;
+    gap: 0; 
+}
+
+.btn {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid var(--text-main);
+    text-decoration: none; /* Removes the standard blue underline from links */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.outline {
+    background-color: transparent;
+    color: var(--text-main);
+}
+
+.btn.filled {
+    background-color: var(--text-main); /* Changed to your updated main text variable */
+    color: white;
+    border-color: var(--text-main);
+}
+
+/* Projects Section */
+.projects-section h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 12px;
+}
+
+.carousel-viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.carousel-track {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    will-change: transform;
+    transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card {
+    flex: 0 0 calc(33.333% - 13.33px); 
+    min-width: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.project-img-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-color: var(--gray-bg);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+/* Hover & Click Effects */
+.project-card:hover .project-img-placeholder {
+    outline: 3px solid var(--pink-accent);
+    outline-offset: 3px;
+}
+
+.project-card:hover .project-img-placeholder img {
+    opacity: 0.85;
+}
+
+.project-card:active .project-img-placeholder {
+    background-color: var(--pink-accent);
+}
+
+.project-card:active .project-img-placeholder img {
+    opacity: 0.25;
+}
+
+.project-title {
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+/* Arrow Alignment centered with image placeholders */
+.arrow-btn {
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px 8px;
+    color: var(--text-main);
+    z-index: 2;
+    margin-top: 0;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Lowered opacity to 0.35 for a soft, subtle tint */
+    background-color: rgba(255, 202, 239, 0.35); 
+    
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    
+    /* Softly blurs the background content behind the glass effect */
+    backdrop-filter: blur(6px); 
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.modal-dates {
+    color: var(--pink-text);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.modal-link {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.modal-img-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: var(--gray-bg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    margin: 20px 0;
+}
+
+img.modal-img-placeholder {
+    object-fit: cover;
+    object-position: center;
+}
+
+.modal-details {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.modal-details p {
+    margin-bottom: 8px;
+}
+
+.modal-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* --- Interactive Small Images --- */
+img.img-placeholder.small {
+    cursor: pointer;
+    transition: all 0.2s ease; /* Changed from 'opacity' to 'all' so the pink highlight fades in smoothly */
+}
+
+img.img-placeholder.small:hover {
+    outline: 3px solid var(--pink-accent); /* Adds the solid pink highlight */
+    outline-offset: 3px; /* Pushes the highlight just outside the image frame for a super clean look */
+    opacity: 0.85; /* Keeps a very slight dimming effect to emphasize the hover */
+}
+
+/* --- Portrait Mobile Layout --- */
+@media (max-width: 700px) and (orientation: portrait) {
+    .top-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    .nav-left {
+        position: static;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-center {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .profile-header {
+        margin-bottom: 28px;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+        margin-bottom: 42px;
+    }
+
+    .profile-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: min(92vw, 420px);
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+
+    .small-images {
+        display: contents;
+    }
+
+    .profile-images > img.img-placeholder.large,
+    .profile-images .small-images > img.img-placeholder.small {
+        width: 100% !important;
+        height: 100% !important;
+        aspect-ratio: 1 / 1;
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .profile-info {
+        width: 100%;
+        max-width: none;
+        flex: 1 1 auto;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        flex: 1 1 100%;
+    }
+
+    .projects-section {
+        margin-top: 6px;
+    }
+
+    .carousel-container {
+        gap: 0;
+        align-items: stretch;
+    }
+
+    .carousel-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        min-width: 0;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        touch-action: pan-x;
+        overscroll-behavior-x: contain;
+    }
+
+    .carousel-viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-track {
+        width: max-content;
+        min-width: max-content;
+        transform: none !important;
+        transition: none !important;
+        padding: 10px 0;
+    }
+
+    .project-card {
+        flex: 0 0 76vw;
+        scroll-snap-align: start;
+    }
+
+    .project-card:hover .project-img-placeholder {
+        outline: none;
+        outline-offset: 0;
+    }
+
+    .project-card:hover .project-img-placeholder img {
+        opacity: 1;
+    }
+
+    img.img-placeholder.small:hover {
+        outline: none;
+        outline-offset: 0;
+        opacity: 1;
+    }
+
+    .arrow-btn {
+        display: none;
+    }
+}
