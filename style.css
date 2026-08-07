@@ -416,6 +416,16 @@ img.img-placeholder.large {
     font-weight: bold;
 }
 
+.about-student a {
+    color: blue;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.about-student a:hover {
+    color: darkblue;
+}
+
 /* --- Updated Button Styles for Links --- */
 .action-buttons {
     display: flex;
@@ -606,9 +616,14 @@ img.img-placeholder.large {
 }
 
 .modal-link {
-    color: var(--text-light);
+    color: blue;
     font-size: 0.8rem;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.modal-link:hover {
+    color: darkblue;
 }
 
 .modal-img-placeholder {
@@ -634,14 +649,14 @@ img.modal-img-placeholder {
 }
 
 .modal-inline-link {
-    color: var(--pink-text);
-    font-weight: bold;
+    color: blue;
+    font-weight: normal;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
 
 .modal-inline-link:hover {
-    color: var(--text-light);
+    color: darkblue;
 }
 
 .modal-details p {
