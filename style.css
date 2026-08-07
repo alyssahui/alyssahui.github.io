@@ -61,6 +61,11 @@ html {
 .nav-center a {
     text-decoration: none;
     color: var(--text-main);
+    transition: color 0.2s ease; /* Adds a smooth fade for the hover effect */
+}
+
+.nav-center a:hover {
+    color: var(--pink-text); /* Highlights the link pink on hover */
 }
 
 .nav-center .slash {
@@ -745,5 +750,325 @@ img.img-placeholder.small:hover {
 
     .arrow-btn {
         display: none;
+    }
+}
+
+/* --- Digital Project Diary (Reviews Style) --- */
+.diary-section {
+    padding: 20px 0 60px 0;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.diary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.diary-entry {
+    display: flex;
+    gap: 35px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.diary-entry:last-child {
+    border-bottom: none;
+}
+
+.diary-img-container {
+    flex: 0 0 280px;
+}
+
+.diary-img-container img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+    background-color: var(--gray-bg);
+}
+
+.diary-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.diary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.diary-header h3 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.diary-dates {
+    font-size: 0.9rem;
+    color: var(--pink-text);
+    font-weight: bold;
+}
+
+.diary-details p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.diary-link {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.diary-link:hover {
+    color: var(--pink-text);
+}
+
+.diary-notes {
+    margin-top: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.diary-notes li {
+    margin-bottom: 6px;
+}
+
+.loading-text {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Mobile adjustments for the diary page */
+@media (max-width: 700px) and (orientation: portrait) {
+    .diary-entry {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 30px;
+    }
+    
+    .diary-img-container {
+        flex: 0 0 auto;
+    }
+    
+    .diary-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Add hover effect to clickable diary entry images */
+img.clickable-diary-img {
+    transition: all 0.2s ease;
+}
+
+img.clickable-diary-img:hover {
+    outline: 3px solid var(--pink-accent);
+    outline-offset: 3px;
+    opacity: 0.85;
+}
+
+/* Substack Feed Styles */
+/* --- Substack Bookshelf Styles --- */
+#substack-feed {
+    display: flex;
+    flex-direction: row; 
+    gap: 15px;
+    margin-top: 40px;
+    padding: 20px 10px 0 10px; /* Gives the books some breathing room on top */
+    
+    /* This creates the "shelf" they sit on */
+    border-bottom: 12px solid var(--gray-bg); 
+    border-radius: 4px;
+    
+    /* Forces the books to sit flush against the bottom shelf */
+    align-items: flex-end; 
+    
+    /* Allows scrolling if you ever pull more than 3-4 articles */
+    overflow-x: auto; 
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
+}
+
+#substack-feed::-webkit-scrollbar {
+    display: none; /* Hides scrollbar on Chrome/Safari */
+}
+
+.substack-article {
+    flex: 0 0 140px; /* Fixed width for the book cover */
+    height: 200px; /* Fixed height for the book cover */
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    
+    /* Rounds the right edge to mimic a book cover opening */
+    border-radius: 2px 8px 8px 2px; 
+    
+    /* Creates a subtle 3D book spine effect */
+    box-shadow: -4px 0 6px rgba(0,0,0,0.03) inset, 3px 3px 8px rgba(0,0,0,0.05); 
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-bottom: none; /* Removes the old list border */
+    padding-bottom: 0;
+}
+
+
+
+
+
+/* --- Editorial Two-Column Layout --- */
+.editorial-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.archive-column {
+    flex: 2.5; /* Takes up roughly 70% of the space */
+}
+
+.about-column {
+    flex: 1; /* Takes up roughly 30% of the space */
+    border-left: 1px solid var(--border-color); /* Creates the dashboard panel divider */
+    padding-left: 40px;
+    position: sticky; /* Keeps the about text visible as you scroll down the books */
+    top: 40px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--gray-bg);
+    padding-bottom: 10px;
+}
+
+.about-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.action-buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* --- Multi-Row Bookshelf Grid --- */
+.bookshelf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+    gap: 40px 20px;
+    align-items: end;
+}
+
+/* Static Outer Container (Purely holds the shelf position) */
+.substack-article,
+.bookshelf-grid .substack-article {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: transparent;
+    border: none;            /* Strips legacy border off outer container */
+    box-shadow: none;        /* Strips legacy shadow off outer container */
+    padding: 0;
+}
+
+/* Static Gray Shelf Line (Stays pinned to the bottom) */
+.bookshelf-grid .substack-article::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: -12px;
+    right: -12px;
+    height: 8px;
+    background-color: var(--gray-bg);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+/* The Interactive Book Cover (Border, shadow, and cover lift TOGETHER) */
+.substack-link {
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    
+    /* Cover & Border Styling */
+    background-color: var(--book-bg, #ffffff);
+    border: 1px solid var(--border-color);
+    border-radius: 2px 8px 8px 2px;
+    box-shadow: -4px 0 6px rgba(0,0,0,0.03) inset, 3px 3px 8px rgba(0,0,0,0.05);
+    
+    /* Stacking & Smooth Animation */
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Smooth Lift off the Shelf */
+.substack-link:hover {
+    transform: translateY(-14px);
+    box-shadow: -4px 0 6px rgba(0,0,0,0.03) inset, 5px 15px 15px rgba(0,0,0,0.08);
+    border-color: var(--pink-accent);
+}
+
+.substack-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.2s ease;
+}
+
+.substack-link:hover .substack-title {
+    color: var(--pink-text);
+}
+
+.substack-date {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--gray-bg);
+    padding-top: 8px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 850px) {
+    .editorial-layout {
+        flex-direction: column-reverse; /* Puts About text on top for mobile */
+    }
+    
+    .about-column {
+        border-left: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-bottom: 30px;
+        position: relative;
+        top: 0;
     }
 }
