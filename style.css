@@ -1,8 +1,12 @@
 :root {
-    --text-main: #7c7c7c; /* Updated text color */
-    --text-light: #7c7c7c; /* Updated text color */
-    --pink-accent: #ffcaef; /* Updated pink */
-    --pink-text: #ffcaef; /* Updated pink */
+    --text-main: #7c7c7c;
+    /* Updated text color */
+    --text-light: #7c7c7c;
+    /* Updated text color */
+    --pink-accent: #ffcaef;
+    /* Updated pink */
+    --pink-text: #ffcaef;
+    /* Updated pink */
     --gray-bg: #d9d9d9;
     --modal-bg-color: #f7f7f7;
     --border-color: #cccccc;
@@ -27,18 +31,21 @@ html {
 
 /* --- Navigation --- */
 .top-nav {
-    position: relative; /* Allows us to absolutely position the left item */
+    position: relative;
+    /* Allows us to absolutely position the left item */
     display: flex;
-    justify-content: center; /* Mathematically guarantees the center links are dead-center */
-    align-items: center; 
-    height: 50px; 
-    padding: 0 40px; 
-    font-size: 0.75rem; 
+    justify-content: center;
+    /* Mathematically guarantees the center links are dead-center */
+    align-items: center;
+    height: 50px;
+    padding: 0 40px;
+    font-size: 0.75rem;
 }
 
 .nav-left {
     position: absolute;
-    left: 40px; /* Pins the contact button to the left edge, matching the padding */
+    left: 40px;
+    /* Pins the contact button to the left edge, matching the padding */
 }
 
 /* New styling specifically for the mailto link */
@@ -49,23 +56,26 @@ html {
 }
 
 .contact-link:hover {
-    color: var(--pink-text); /* Gives it a nice hover effect */
+    color: var(--pink-text);
+    /* Gives it a nice hover effect */
 }
 
 .nav-center {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .nav-center a {
     text-decoration: none;
     color: var(--text-main);
-    transition: color 0.2s ease; /* Adds a smooth fade for the hover effect */
+    transition: color 0.2s ease;
+    /* Adds a smooth fade for the hover effect */
 }
 
 .nav-center a:hover {
-    color: var(--pink-text); /* Highlights the link pink on hover */
+    color: var(--pink-text);
+    /* Highlights the link pink on hover */
 }
 
 .nav-center .slash {
@@ -89,13 +99,16 @@ html {
         flex-direction: column;
         height: auto;
         padding: 15px 20px;
-        gap: 12px; /* Space between "contact me" and the nav links */
+        gap: 12px;
+        /* Space between "contact me" and the nav links */
     }
-    
+
     .nav-left {
-        position: static; /* Removes the absolute positioning */
+        position: static;
+        /* Removes the absolute positioning */
         display: flex;
-        justify-content: center; /* Centers the contact button on the top line */
+        justify-content: center;
+        /* Centers the contact button on the top line */
     }
 
     .nav-center {
@@ -165,26 +178,34 @@ html {
         touch-action: pan-x;
         overscroll-behavior-x: contain;
     }
-    
+
     /* show and enlarge arrow buttons for touch in landscape */
-    .carousel-container { position: relative; }
+    .carousel-container {
+        position: relative;
+    }
+
     .arrow-btn {
         display: block;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255,255,255,0.9);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 8px;
         padding: 10px 12px;
         min-width: 44px;
         min-height: 44px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         z-index: 10;
         color: var(--text-main);
     }
-    
-    .arrow-btn.left-arrow { left: 6px; }
-    .arrow-btn.right-arrow { right: 6px; }
+
+    .arrow-btn.left-arrow {
+        left: 6px;
+    }
+
+    .arrow-btn.right-arrow {
+        right: 6px;
+    }
 
     .carousel-viewport::-webkit-scrollbar {
         display: none;
@@ -219,94 +240,106 @@ main {
 .profile-header {
     display: flex;
     justify-content: center;
-    align-items: flex-end; 
+    align-items: flex-end;
     margin-bottom: 40px;
 }
 
 .name-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    line-height: 0.9; 
+    align-items: flex-start;
+    line-height: 0.9;
 }
 
 /* --- Profile Header Text Colors --- */
 .first-name {
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     font-weight: 300;
-    color: var(--text-main); /* Now uses the #7c7c7c variable */
+    color: var(--text-main);
+    /* Now uses the #7c7c7c variable */
 }
 
 .last-name {
-    font-size: 2.1rem; 
-    font-weight: 500; 
-    color: var(--text-main); /* Now uses the #7c7c7c variable */
-    margin-left: 45px; 
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: var(--text-main);
+    /* Now uses the #7c7c7c variable */
+    margin-left: 45px;
 }
 
 .pink-exclamation {
     color: var(--pink-accent);
-    font-size: 3.8rem; /* Scaled down from 4.8rem to match the names */
+    font-size: 3.8rem;
+    /* Scaled down from 4.8rem to match the names */
     font-weight: bold;
     line-height: 0.75;
-    margin-left: 0px; /* Reduced from 10px to pull it tighter to "DANG" */
-    transform: rotate(8deg); 
+    margin-left: 0px;
+    /* Reduced from 10px to pull it tighter to "DANG" */
+    transform: rotate(8deg);
     transform-origin: bottom center;
 }
 
 /* --- Profile Content Alignment --- */
 .profile-content {
     display: flex;
-    justify-content: center; /* Centers the entire grouping horizontally */
-    align-items: center; /* Centers the image block and text block vertically */
-    gap: 50px; /* Slightly increased gap to let the larger images breathe */
+    justify-content: center;
+    /* Centers the entire grouping horizontally */
+    align-items: center;
+    /* Centers the image block and text block vertically */
+    gap: 50px;
+    /* Slightly increased gap to let the larger images breathe */
     margin-bottom: 60px;
 }
 
 /* --- Scaled Image Grid Proportions --- */
 .profile-images {
     display: flex;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .small-images {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Kept at 10px */
+    gap: 10px;
+    /* Kept at 10px */
 }
 
 /* --- Real Image Grid Proportions --- */
 .profile-images {
     display: flex;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .small-images {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
 }
 
 /* This targets the actual <img> tags now */
 img.img-placeholder {
-    object-fit: cover; /* This is the magic rule! It perfectly crops the photo to fit the square without squishing it */
-    object-position: center; /* Ensures the middle of your photo is what stays in the frame */
-    background-color: var(--gray-bg); /* Keeps a gray background while the photo loads */
+    object-fit: cover;
+    /* This is the magic rule! It perfectly crops the photo to fit the square without squishing it */
+    object-position: center;
+    /* Ensures the middle of your photo is what stays in the frame */
+    background-color: var(--gray-bg);
+    /* Keeps a gray background while the photo loads */
 }
 
 img.img-placeholder.small {
     width: 115px;
-    height: 115px; 
+    height: 115px;
 }
 
 img.img-placeholder.large {
     width: 365px;
-    height: 365px; 
+    height: 365px;
 }
 
 /* --- Ensure Info Section Stays Confined --- */
 .profile-info {
-    flex: 0 1 400px; /* Prevents the text block from stretching too wide, keeping it neat next to the larger images */
+    flex: 0 1 400px;
+    /* Prevents the text block from stretching too wide, keeping it neat next to the larger images */
 }
 
 .badge {
@@ -347,6 +380,7 @@ img.img-placeholder.large {
     font-size: 0.8rem;
     margin-bottom: 15px;
 }
+
 /* --- Fixed Bullet Point Indentation --- */
 .about-student {
     font-size: 0.85rem;
@@ -354,34 +388,38 @@ img.img-placeholder.large {
     margin-bottom: 25px;
 }
 
-.about-student > p {
+.about-student>p {
     font-weight: 500;
     margin-bottom: 0px;
 }
 
 .about-student ul {
     list-style-type: none;
-    padding-left: 0; 
+    padding-left: 0;
 }
 
 .about-student li {
-    position: relative; /* Allows us to absolutely position the bullet inside */
-    padding-left: 12px; /* Pushes all text (including the 2nd line) to the right */
+    position: relative;
+    /* Allows us to absolutely position the bullet inside */
+    padding-left: 12px;
+    /* Pushes all text (including the 2nd line) to the right */
     margin-bottom: 4px;
 }
 
 .about-student li::before {
-    content: "·"; /* Using the smaller middle dot to match your screenshot */
+    content: "·";
+    /* Using the smaller middle dot to match your screenshot */
     position: absolute;
-    left: 0; /* Locks the bullet to the far left edge of the padded space */
+    left: 0;
+    /* Locks the bullet to the far left edge of the padded space */
     top: 0;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /* --- Updated Button Styles for Links --- */
 .action-buttons {
     display: flex;
-    gap: 0; 
+    gap: 0;
 }
 
 .btn {
@@ -390,7 +428,8 @@ img.img-placeholder.large {
     font-family: inherit;
     cursor: pointer;
     border: 1px solid var(--text-main);
-    text-decoration: none; /* Removes the standard blue underline from links */
+    text-decoration: none;
+    /* Removes the standard blue underline from links */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -402,7 +441,8 @@ img.img-placeholder.large {
 }
 
 .btn.filled {
-    background-color: var(--text-main); /* Changed to your updated main text variable */
+    background-color: var(--text-main);
+    /* Changed to your updated main text variable */
     color: white;
     border-color: var(--text-main);
 }
@@ -437,7 +477,7 @@ img.img-placeholder.large {
 }
 
 .project-card {
-    flex: 0 0 calc(33.333% - 13.33px); 
+    flex: 0 0 calc(33.333% - 13.33px);
     min-width: 0;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -451,7 +491,7 @@ img.img-placeholder.large {
     margin-bottom: 10px;
     overflow: hidden;
     transition: all 0.2s ease;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -510,17 +550,18 @@ img.img-placeholder.large {
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     /* Lowered opacity to 0.35 for a soft, subtle tint */
-    background-color: rgba(255, 202, 239, 0.35); 
-    
+    background-color: rgba(255, 202, 239, 0.35);
+
     z-index: 1000;
     align-items: center;
     justify-content: center;
-    
+
     /* Softly blurs the background content behind the glass effect */
-    backdrop-filter: blur(6px); 
-    -webkit-backdrop-filter: blur(6px); /* Safari support */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    /* Safari support */
 }
 
 .modal-content {
@@ -529,7 +570,7 @@ img.img-placeholder.large {
     max-width: 600px;
     border-radius: 15px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
@@ -616,13 +657,17 @@ img.modal-img-placeholder {
 /* --- Interactive Small Images --- */
 img.img-placeholder.small {
     cursor: pointer;
-    transition: all 0.2s ease; /* Changed from 'opacity' to 'all' so the pink highlight fades in smoothly */
+    transition: all 0.2s ease;
+    /* Changed from 'opacity' to 'all' so the pink highlight fades in smoothly */
 }
 
 img.img-placeholder.small:hover {
-    outline: 3px solid var(--pink-accent); /* Adds the solid pink highlight */
-    outline-offset: 3px; /* Pushes the highlight just outside the image frame for a super clean look */
-    opacity: 0.85; /* Keeps a very slight dimming effect to emphasize the hover */
+    outline: 3px solid var(--pink-accent);
+    /* Adds the solid pink highlight */
+    outline-offset: 3px;
+    /* Pushes the highlight just outside the image frame for a super clean look */
+    opacity: 0.85;
+    /* Keeps a very slight dimming effect to emphasize the hover */
 }
 
 /* --- Portrait Mobile Layout --- */
@@ -672,8 +717,8 @@ img.img-placeholder.small:hover {
         display: contents;
     }
 
-    .profile-images > img.img-placeholder.large,
-    .profile-images .small-images > img.img-placeholder.small {
+    .profile-images>img.img-placeholder.large,
+    .profile-images .small-images>img.img-placeholder.small {
         width: 100% !important;
         height: 100% !important;
         aspect-ratio: 1 / 1;
@@ -860,11 +905,11 @@ img.img-placeholder.small:hover {
         gap: 15px;
         padding-bottom: 30px;
     }
-    
+
     .diary-img-container {
         flex: 0 0 auto;
     }
-    
+
     .diary-header {
         flex-direction: column;
         gap: 5px;
@@ -885,42 +930,33 @@ img.clickable-diary-img:hover {
 /* Substack Feed Styles */
 /* --- Substack Bookshelf Styles --- */
 #substack-feed {
-    display: flex;
-    flex-direction: row; 
-    gap: 15px;
     margin-top: 40px;
-    padding: 20px 10px 0 10px; /* Gives the books some breathing room on top */
-    
-    /* This creates the "shelf" they sit on */
-    border-bottom: 12px solid var(--gray-bg); 
-    border-radius: 4px;
-    
-    /* Forces the books to sit flush against the bottom shelf */
-    align-items: flex-end; 
-    
-    /* Allows scrolling if you ever pull more than 3-4 articles */
-    overflow-x: auto; 
-    scrollbar-width: none; /* Hides scrollbar on Firefox */
+    padding: 20px 10px 0 10px;
+    /* Gives the books some breathing room on top */
 }
 
 #substack-feed::-webkit-scrollbar {
-    display: none; /* Hides scrollbar on Chrome/Safari */
+    display: none;
+    /* Hides scrollbar on Chrome/Safari */
 }
 
 .substack-article {
-    flex: 0 0 140px; /* Fixed width for the book cover */
-    height: 200px; /* Fixed height for the book cover */
+    flex: 0 0 140px;
+    /* Fixed width for the book cover */
+    height: 200px;
+    /* Fixed height for the book cover */
     background-color: #ffffff;
     border: 1px solid var(--border-color);
-    
+
     /* Rounds the right edge to mimic a book cover opening */
-    border-radius: 2px 8px 8px 2px; 
-    
+    border-radius: 2px 8px 8px 2px;
+
     /* Creates a subtle 3D book spine effect */
-    box-shadow: -4px 0 6px rgba(0,0,0,0.03) inset, 3px 3px 8px rgba(0,0,0,0.05); 
-    
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.03) inset, 3px 3px 8px rgba(0, 0, 0, 0.05);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border-bottom: none; /* Removes the old list border */
+    border-bottom: none;
+    /* Removes the old list border */
     padding-bottom: 0;
 }
 
@@ -937,14 +973,18 @@ img.clickable-diary-img:hover {
 }
 
 .archive-column {
-    flex: 2.5; /* Takes up roughly 70% of the space */
+    flex: 2.5;
+    /* Takes up roughly 70% of the space */
 }
 
 .about-column {
-    flex: 1; /* Takes up roughly 30% of the space */
-    border-left: 1px solid var(--border-color); /* Creates the dashboard panel divider */
+    flex: 1;
+    /* Takes up roughly 30% of the space */
+    border-left: 1px solid var(--border-color);
+    /* Creates the dashboard panel divider */
     padding-left: 40px;
-    position: sticky; /* Keeps the about text visible as you scroll down the books */
+    position: sticky;
+    /* Keeps the about text visible as you scroll down the books */
     top: 40px;
 }
 
@@ -974,9 +1014,21 @@ img.clickable-diary-img:hover {
 /* --- Multi-Row Bookshelf Grid --- */
 .bookshelf-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px 20px;
     align-items: end;
+}
+
+@media (max-width: 700px) {
+    .bookshelf-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .bookshelf-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Static Outer Container (Purely holds the shelf position) */
@@ -986,8 +1038,10 @@ img.clickable-diary-img:hover {
     width: 100%;
     height: 200px;
     background-color: transparent;
-    border: none;            /* Strips legacy border off outer container */
-    box-shadow: none;        /* Strips legacy shadow off outer container */
+    border: none;
+    /* Strips legacy border off outer container */
+    box-shadow: none;
+    /* Strips legacy shadow off outer container */
     padding: 0;
 }
 
@@ -1014,13 +1068,13 @@ img.clickable-diary-img:hover {
     height: 100%;
     padding: 15px;
     box-sizing: border-box;
-    
+
     /* Cover & Border Styling */
     background-color: var(--book-bg, #ffffff);
     border: 1px solid var(--border-color);
     border-radius: 2px 8px 8px 2px;
-    box-shadow: -4px 0 6px rgba(0,0,0,0.03) inset, 3px 3px 8px rgba(0,0,0,0.05);
-    
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.03) inset, 3px 3px 8px rgba(0, 0, 0, 0.05);
+
     /* Stacking & Smooth Animation */
     position: relative;
     z-index: 2;
@@ -1030,7 +1084,7 @@ img.clickable-diary-img:hover {
 /* Smooth Lift off the Shelf */
 .substack-link:hover {
     transform: translateY(-14px);
-    box-shadow: -4px 0 6px rgba(0,0,0,0.03) inset, 5px 15px 15px rgba(0,0,0,0.08);
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.03) inset, 5px 15px 15px rgba(0, 0, 0, 0.08);
     border-color: var(--pink-accent);
 }
 
@@ -1060,9 +1114,10 @@ img.clickable-diary-img:hover {
 /* --- Mobile Responsiveness --- */
 @media (max-width: 850px) {
     .editorial-layout {
-        flex-direction: column-reverse; /* Puts About text on top for mobile */
+        flex-direction: column-reverse;
+        /* Puts About text on top for mobile */
     }
-    
+
     .about-column {
         border-left: none;
         border-bottom: 1px solid var(--border-color);
