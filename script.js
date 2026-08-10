@@ -310,6 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Loop through each card, extract data, and build the review layout
                 projectCards.forEach(card => {
+                    const tags = (card.getAttribute('data-modal-tags') || '')
+                        .split(',')
+                        .map(t => t.trim())
+                        .filter(Boolean);
                     const title = card.getAttribute('data-modal-title') || 'Untitled';
                     const dates = card.getAttribute('data-modal-dates') || '';
                     const linkHref = card.getAttribute('data-modal-link') || '#';
@@ -332,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const entry = document.createElement('div');
                     entry.className = 'diary-entry';
+                    entry.dataset.tags = tags.join(',');
 
                     const formatNote = (text, href, lText) => {
                         if (!text) return '';
@@ -376,6 +381,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     diaryContainer.appendChild(entry);
                 });
+
+                // --- Tag Filter Logic ---
+                const tagFilterBar = document.getElementById('tagFilterBar');
+                if (tagFilterBar) {
+                    const tagPills = tagFilterBar.querySelectorAll('.tag-pill');
+                    const allEntries = Array.from(diaryContainer.querySelectorAll('.diary-entry'));
+
+                    tagPills.forEach(pill => {
+                        pill.addEventListener('click', () => {
+                            const selectedTag = pill.getAttribute('data-tag');
+
+                            // Update active pill styling
+                            tagPills.forEach(p => p.classList.remove('active'));
+                            pill.classList.add('active');
+
+                            // Show/hide entries based on selected tag
+                            allEntries.forEach(entry => {
+                                const entryTags = (entry.dataset.tags || '').split(',').filter(Boolean);
+                                const shouldShow = selectedTag === 'all' || entryTags.includes(selectedTag);
+                                entry.style.display = shouldShow ? '' : 'none';
+                            });
+                        });
+                    });
+                }
             })
             .catch(error => {
                 console.error('Error loading projects:', error);
