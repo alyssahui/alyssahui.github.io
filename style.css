@@ -3,10 +3,10 @@
     /* Updated text color */
     --text-light: #7c7c7c;
     /* Updated text color */
-    --pink-accent: #ffcaef;
-    /* Updated pink */
-    --pink-text: #ffcaef;
-    /* Updated pink */
+    --pink-accent: #9b3f8f;
+    /* Updated deep pinkish purple */
+    --pink-text: #9b3f8f;
+    /* Updated deep pinkish purple */
     --gray-bg: #d9d9d9;
     --modal-bg-color: #f7f7f7;
     --border-color: #cccccc;
@@ -76,7 +76,7 @@ html {
 
 .nav-center a:hover {
     color: var(--pink-text);
-    /* Highlights the link pink on hover */
+    /* Highlights the link deep pinkish purple on hover */
 }
 
 .nav-center .slash {
@@ -290,6 +290,33 @@ main {
     gap: 50px;
     /* Slightly increased gap to let the larger images breathe */
     margin-bottom: 60px;
+}
+
+.photo-column {
+    flex: 0 0 auto;
+}
+
+.halloween-countdown {
+    margin-top: 14px;
+    color: var(--pink-text);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    text-align: left;
+    animation: halloween-blink 1.2s steps(1, start) infinite;
+}
+
+@keyframes halloween-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .halloween-countdown {
+        animation: none;
+    }
 }
 
 /* --- Scaled Image Grid Proportions --- */
@@ -563,7 +590,7 @@ img.img-placeholder.large {
     height: 100%;
 
     /* Lowered opacity to 0.35 for a soft, subtle tint */
-    background-color: rgba(255, 202, 239, 0.35);
+    background-color: rgba(155, 63, 143, 0.35);
 
     z-index: 1000;
     align-items: center;
@@ -674,12 +701,12 @@ img.modal-img-placeholder {
 img.img-placeholder.small {
     cursor: pointer;
     transition: all 0.2s ease;
-    /* Changed from 'opacity' to 'all' so the pink highlight fades in smoothly */
+    /* Changed from 'opacity' to 'all' so the deep pinkish purple highlight fades in smoothly */
 }
 
 img.img-placeholder.small:hover {
     outline: 3px solid var(--pink-accent);
-    /* Adds the solid pink highlight */
+    /* Adds the solid deep pinkish purple highlight */
     outline-offset: 3px;
     /* Pushes the highlight just outside the image frame for a super clean look */
     opacity: 0.85;

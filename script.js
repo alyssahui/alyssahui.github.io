@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const halloweenCountdown = document.getElementById('halloweenCountdown');
+
+    if (halloweenCountdown) {
+        const updateHalloweenCountdown = () => {
+            const now = new Date();
+            const halloween = new Date(now.getFullYear(), 9, 31);
+
+            if (now >= halloween) {
+                halloween.setFullYear(halloween.getFullYear() + 1);
+            }
+
+            const remainingMinutes = Math.max(0, Math.floor((halloween - now) / 60000));
+            const days = Math.floor(remainingMinutes / (24 * 60));
+            const hours = Math.floor((remainingMinutes % (24 * 60)) / 60);
+            const minutes = remainingMinutes % 60;
+
+            halloweenCountdown.textContent =
+                `Halloween in ${days} ${days === 1 ? 'day' : 'days'}, ` +
+                `${hours} ${hours === 1 ? 'hour' : 'hours'}, ` +
+                `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
+        };
+
+        updateHalloweenCountdown();
+        setInterval(updateHalloweenCountdown, 1000);
+    }
+
     // --- Smooth Infinite Carousel Logic ---
     const track = document.getElementById('projectTrack');
     const scrollLeftBtn = document.getElementById('scrollLeft');
